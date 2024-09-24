@@ -1,0 +1,34 @@
+ **automobile price prediction** using various steps, including data preprocessing, feature engineering, and machine learning modeling with XGBoost. Here's a breakdown:
+
+### Key Steps:
+
+1. **Data Loading & Exploration**:
+   - The dataset is loaded from a CSV file.
+   - It identifies and replaces missing values (`?`) with `NaN` and corrects incorrectly typed columns.
+
+2. **Missing Value Imputation**:
+   - The `KNNImputer` is used to fill missing values in numeric columns.
+
+3. **Data Preprocessing**:
+   - Converts object data types to numeric where applicable.
+   - Encodes categorical features like `make`, `engine-type`, and `num-of-cylinders` with numerical labels.
+   - Drops irrelevant columns like `num-of-doors`.
+
+4. **Feature Engineering**:
+   - Categorical columns are one-hot encoded.
+   - Numerical features are scaled using `StandardScaler`.
+   - PCA (Principal Component Analysis) is applied for dimensionality reduction.
+
+5. **Modeling**:
+   - Splits the data into training and testing sets.
+   - Builds a pipeline that includes scaling, PCA, and the `XGBRegressor` model for regression.
+
+6. **Model Evaluation**:
+   - Predicts automobile prices on the test set.
+   - Evaluates the model using the R² score and Mean Absolute Percentage Error (MAPE).
+   - Compares the predicted and true values using a bar plot.
+
+### Visualization:
+   - Heatmaps and bar plots are used to explore correlations and visualize comparisons between predictions and true values.
+
+This pipeline ensures robust predictions of automobile prices by applying preprocessing, PCA, and model training steps.
